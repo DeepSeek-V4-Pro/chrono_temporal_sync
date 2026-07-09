@@ -200,7 +200,7 @@ class ChronoTemporalPlugin(MaiBotPlugin):
         await self.ctx.send.forward(messages=messages, stream_id=stream_id)
 
         msg = "Spacetime coordinate sampling protocol completed" if is_english else "时空坐标采样协议执行完毕"
-        return True, msg, False
+        return True, msg, 0
 
 
 def create_plugin() -> ChronoTemporalPlugin:
