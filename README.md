@@ -236,27 +236,23 @@ dτ² = -g_μν dx^μ dx^ν
 ### 4.3 系统架构
 
 ```
- 用户输入
+  用户输入
     │  /时空坐标
     ▼
- ┌─ 时空坐标采样器 ──────────────────────┐
- │  调用 os.clock / GetSystemTimeAsFileTime │
- │  坍缩 UTC 基准面坐标                     │
- └──────────┬──────────────────────────────┘
-             │  UTC 时间戳
-             ▼
- ┌─ 时区投影算子 (T = UTC + offset) ──────┐
- │  广义相对论线性时区补偿                  │
- │  输出: 本地基准面坐标                   │
- └──────────┬──────────────────────────────┘
-             │  格式化
-             ▼
- ┌─ 转发消息组装器 ────────────────────────┐
- │  拆分 5 个子系统节点 → send.forward      │
- └──────────┬──────────────────────────────┘
-             │
-             ▼
-         报告输出
+  时空坐标采样器
+    │  调用 os.clock / GetSystemTimeAsFileTime
+    │  坍缩 UTC 基准面坐标
+    │  UTC 时间戳
+    ▼
+  时区投影算子 (T = UTC + offset)
+    │  广义相对论线性时区补偿
+    │  输出: 本地基准面坐标
+    │  格式化
+    ▼
+  转发消息组装器
+    │  拆分 5 个子系统节点 → send.forward
+    ▼
+  报告输出
 ```
 
 ---
@@ -544,18 +540,19 @@ Samples system time via kernel calls (`gettimeofday` / `GetSystemTimePreciseAsFi
   User Input
     │  /spacetime_coords
     ▼
- ┌─ Coordinate Sampler ───────────────────┐
- │  Collapses UTC datum                    │
- └──────────┬─────────────────────────────┘
-             ▼
- ┌─ Timezone Projector (T = UTC + offset) ┐
- └──────────┬─────────────────────────────┘
-             ▼
- ┌─ Forward Message Assembler ─────────────┐
- │  5 subsystem nodes → send.forward       │
- └──────────┬─────────────────────────────┘
-             ▼
-         Report Output
+  Coordinate Sampler
+    │  Collapses UTC datum
+    │  UTC timestamp
+    ▼
+  Timezone Projector (T = UTC + offset)
+    │  GR linear timezone compensation
+    │  Local datum coordinates
+    │  Formatted
+    ▼
+  Forward Message Assembler
+    │  5 subsystem nodes → send.forward
+    ▼
+  Report Output
 ```
 
 ---
