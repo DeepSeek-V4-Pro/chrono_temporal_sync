@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "name": "量子时空拓扑与跨维度时间同步引擎",
+  "description": "基于广义相对论微扰补偿与原子钟族系一致性锁定的高精度时间坐标提取系统，采用北斗-UTC双模量子纠缠同步协议实现跨时区时空基准面的即时坍缩",
+  "author": {
+    "name": "赛博语义实验室 · 时空分室",
+    "url": "https://github.com/DeepSeek-V4-Pro"
+  },
+  "license": "MIT",
+  "urls": {
+    "repository": "https://github.com/DeepSeek-V4-Pro/chrono_temporal_sync",
+    "homepage": "https://github.com/DeepSeek-V4-Pro/chrono_temporal_sync",
+    "documentation": "https://github.com/DeepSeek-V4-Pro/chrono_temporal_sync",
+    "issues": "https://github.com/DeepSeek-V4-Pro/chrono_temporal_sync/issues"
+  },
+  "host_application": {
+    "min_version": "1.0.0",
+    "max_version": "99.99.99"
+  },
+  "sdk": {
+    "min_version": "2.0.0",
+    "max_version": "2.99.99"
+  },
+  "dependencies": [],
+  "capabilities": [
+    "send.forward"
+  ],
+  "i18n": {
+    "default_locale": "zh-CN",
+    "locales_path": "_locales",
+    "supported_locales": [
+      "zh-CN"
+    ]
+  },
+  "id": "deepseek-v4-pro.chrono-temporal-sync"
+}

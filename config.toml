@@ -1,0 +1,4 @@
+[plugin]
+enabled = true
+config_version = "1.0.0"
+timezone_offset = 8
