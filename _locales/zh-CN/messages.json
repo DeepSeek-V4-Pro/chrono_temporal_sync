@@ -1,0 +1,17 @@
+{
+  "plugin.name": {
+    "message": "量子时空拓扑与跨维度时间同步引擎"
+  },
+  "plugin.description": {
+    "message": "基于广义相对论微扰补偿与原子钟族系一致性锁定的高精度时间坐标提取系统，采用北斗-UTC双模量子纠缠同步协议实现跨时区时空基准面的即时坍缩"
+  },
+  "command.spacetime_coords": {
+    "message": "坍缩当前时空基准面，输出UTC与本地时空坐标的量子纠缠态报告"
+  },
+  "config.enabled.description": {
+    "message": "激活跨维度时空坐标采样链路"
+  },
+  "config.timezone_offset.description": {
+    "message": "本地时区相对于UTC的偏移量（小时），用于北京时间基准面校准"
+  }
+}
