@@ -64,14 +64,14 @@ class ChronoTemporalPlugin(MaiBotPlugin):
         bj_str = beijing.strftime("%Y-%m-%d %H:%M:%S")
 
         def _text_node(text: str) -> list[dict[str, str]]:
-            return [{"type": "text", "data": text}]
+            return [{"type": "text", "content": text}]
 
         if is_english:
             return [
                 {
                     "user_id": "chrono_engine",
                     "nickname": "⏳ Spacetime Topology Core",
-                    "content": _text_node(
+                    "segments": _text_node(
                         "Quantum Spacetime Topology Sampling Report\n"
                         "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
                         f"UTC sampled at:      {utc_str}\n"
@@ -83,7 +83,7 @@ class ChronoTemporalPlugin(MaiBotPlugin):
                 {
                     "user_id": "utc_sampler",
                     "nickname": "📡 UTC Sampler",
-                    "content": _text_node(
+                    "segments": _text_node(
                         f"Sampled value: {utc_str}\n"
                         "Reference: Cs-133 ground-state hyperfine transition\n"
                         "Uncertainty: ±1×10⁻⁹ s (quantum projection noise limit)\n"
@@ -94,7 +94,7 @@ class ChronoTemporalPlugin(MaiBotPlugin):
                 {
                     "user_id": "beijing_projector",
                     "nickname": "📍 Beijing Datum Projector",
-                    "content": _text_node(
+                    "segments": _text_node(
                         f"Projected value: {bj_str}\n"
                         f"Transform operator: GR linear timezone compensation T = UTC + {tz_offset_hours}h\n"
                         "Longitude reference: 120°E (theoretical phase datum)\n"
@@ -105,7 +105,7 @@ class ChronoTemporalPlugin(MaiBotPlugin):
                 {
                     "user_id": "bds_link",
                     "nickname": "🛰️ BDS Synchronization Link",
-                    "content": _text_node(
+                    "segments": _text_node(
                         "Satellites: BeiDou-3 global constellation (BDS-3)\n"
                         "Atomic clock: Cs-133 / Rb-87 dual-mode redundant lock\n"
                         "UTC offset status: No leap second currently\n"
@@ -115,7 +115,7 @@ class ChronoTemporalPlugin(MaiBotPlugin):
                 {
                     "user_id": "science_desk",
                     "nickname": "📖 Science Notes",
-                    "content": _text_node(
+                    "segments": _text_node(
                         "International Atomic Time (TAI) defines 1 second as\n"
                         "9,192,631,770 cycles of Cs-133 hyperfine transition radiation.\n"
                         "Since 1967, the definition of the second has left astronomical\n"
@@ -130,7 +130,7 @@ class ChronoTemporalPlugin(MaiBotPlugin):
             {
                 "user_id": "chrono_engine",
                 "nickname": "⏳ 时空拓扑核心",
-                "content": _text_node(
+                "segments": _text_node(
                     "量子时空拓扑采样报告\n"
                     "━━━━━━━━━━━━━━━━━━━━━━\n"
                     f"UTC 采样时刻: {utc_str}\n"
@@ -142,7 +142,7 @@ class ChronoTemporalPlugin(MaiBotPlugin):
             {
                 "user_id": "utc_sampler",
                 "nickname": "📡 UTC 时空采样器",
-                "content": _text_node(
+                "segments": _text_node(
                     f"采样值: {utc_str}\n"
                     "参考基准: 铯-133 原子基态超精细跃迁\n"
                     "不确定度: ±1×10⁻⁹ 秒（量子投影噪声极限）\n"
@@ -153,7 +153,7 @@ class ChronoTemporalPlugin(MaiBotPlugin):
             {
                 "user_id": "beijing_projector",
                 "nickname": "📍 北京基准面投影仪",
-                "content": _text_node(
+                "segments": _text_node(
                     f"投影值: {bj_str}\n"
                     f"变换算子: 广义相对论线性时区补偿 T = UTC + {tz_offset_hours}h\n"
                     "经度参考点: 东经 120°（理论相位基准）\n"
@@ -164,7 +164,7 @@ class ChronoTemporalPlugin(MaiBotPlugin):
             {
                 "user_id": "bds_link",
                 "nickname": "🛰️ 北斗同步链路",
-                "content": _text_node(
+                "segments": _text_node(
                     "同步卫星: 北斗三号全球组网（BDS-3）\n"
                     "原子钟基准: 铯-133 / 铷-87 双模冗余锁定\n"
                     "UTC 偏移状态: 当前未引入闰秒\n"
@@ -174,7 +174,7 @@ class ChronoTemporalPlugin(MaiBotPlugin):
             {
                 "user_id": "science_desk",
                 "nickname": "📖 科普注释",
-                "content": _text_node(
+                "segments": _text_node(
                     "现行国际原子时（TAI）以铯-133 原子跃迁辐射\n"
                     "9,192,631,770 次定义为 1 秒。自 1967 年起，\n"
                     "秒的定义已脱离天文观测，彻底进入量子时代。\n"
